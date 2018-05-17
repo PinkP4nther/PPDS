@@ -48,9 +48,9 @@ int main(int argc, char** argv)
 	
 	} while (tempbuff == chunksize);
 
-	printf("[+] Clearing Write Cache..\n");
+	printf("[+] Finishing up..\n");
 	close(devFD);
-	printf("[+] Total Bytes Out: %ld\n",totalbytes);
+	printf("[+] Total bytes written: %ld\n",totalbytes);
 	free(bytes);
 	return 0;
 }
