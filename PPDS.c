@@ -15,29 +15,39 @@
 void pperror(const char* err, char* prog)
 {
 	printf("[-] %s\n[Usage] %s <Chunk_Size Ex. 512> <Device Ex. /dev/sdb>\n",err,prog);
-	exit(0);
+	exit(1);
 }
 
 int main(int argc, char** argv)
 {
+	if (geteuid() != 0)
+		pperror("Must be root",argv[0]);
+	
 	int devFD;
-	int infoi = 1073741824; // 1GB
+	int infoi = 1073741824; /* 1GB */
 	ssize_t tempbuff, totalbytes = 0;
-	if (argc < 2)
+	
+	if (argc < 3)
 		pperror("Insufficient args",argv[0]);
+	
 	devFD = open(argv[2],O_WRONLY);
 	int chunksize = atoi(argv[1]);
+	
 	if (devFD < 0)
 		pperror("Can't open device for writing.",argv[0]);
+
 	char* bytes = calloc(1,chunksize);
  
 	do
 	{
 		tempbuff = write(devFD, bytes, chunksize);
 		totalbytes += tempbuff;
+	
 		if (totalbytes%infoi == 0)
 			printf("[INFO] Bytes Out: %ld -> Device: %s\n",totalbytes,argv[2]);
+	
 	} while (tempbuff == chunksize);
+
 	printf("[+] Clearing Write Cache..\n");
 	close(devFD);
 	printf("[+] Total Bytes Out: %ld\n",totalbytes);
