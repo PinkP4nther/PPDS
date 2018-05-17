@@ -10,7 +10,7 @@ $ ./PPDS
 [-] Insufficient args
 [Usage] ./PPDS <Chunk_Size Ex. 512> <Device Ex. /dev/sdb>
 
-# Example Output
+# Example output of erasing my 8GB USB drive
 
 [ra_horakhty][Dev][PPDS]
 -> sudo ./PPDS 512 /dev/sdb
