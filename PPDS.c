@@ -14,7 +14,7 @@
 
 void pperror(const char* err, char* prog)
 {
-	printf("[-] %s\n[Usage] %s <Buffer Write Size Ex. 1048576 (1MB)> <Device Ex. /dev/sdb>\n",err,prog);
+	printf("[-] %s\n[Usage] %s <Buffer write size in bytes Ex. 1048576 (1MB)> <Device Ex. /dev/sdb>\n",err,prog);
 	exit(1);
 }
 
@@ -44,7 +44,7 @@ int main(int argc, char** argv)
 		totalbytes += tempbuff;
 	
 		if (totalbytes%infoi == 0)
-			printf("[INFO] Bytes Out: %ld -> Device: %s\n",totalbytes,argv[2]);
+			printf("[INFO] Bytes Written: %ld -> Device: %s\n",totalbytes,argv[2]);
 	
 	} while (tempbuff == chunksize);
 
