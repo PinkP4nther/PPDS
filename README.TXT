@@ -22,5 +22,5 @@ $ ./PPDS
 [INFO] Bytes Out: 5368709120 -> Device: /dev/sdb
 [INFO] Bytes Out: 6442450944 -> Device: /dev/sdb
 [INFO] Bytes Out: 7516192768 -> Device: /dev/sdb
-[+] Finishing up..
+[+] Finishing up. This could take a while..
 [+] Total Bytes Out: 8006926335
