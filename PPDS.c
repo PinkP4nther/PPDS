@@ -14,7 +14,7 @@
 
 void pperror(const char* err, char* prog)
 {
-	printf("[-] %s\n[Usage] %s <Chunk_Size Ex. 512> <Device Ex. /dev/sdb>\n",err,prog);
+	printf("[-] %s\n[Usage] %s <Buffer Write Size Ex. 1048576 (1MB)> <Device Ex. /dev/sdb>\n",err,prog);
 	exit(1);
 }
 
@@ -48,9 +48,10 @@ int main(int argc, char** argv)
 	
 	} while (tempbuff == chunksize);
 
-	printf("[+] Finishing up. This could take a while..\n");
+	printf("[INFO] Finishing up. This could take a while..\n");
 	close(devFD);
-	printf("[+] Total bytes written: %ld\n",totalbytes);
+	printf("[INFO] Device overwritten: %s\n",argv[2]);
+	printf("[INFO] Total bytes written: %ld\n",totalbytes);
 	free(bytes);
 	return 0;
 }
