@@ -5,11 +5,12 @@ A tool to overwrite devices with trash data on Linux
 $ cd PPDS/
 $ make
 
+# Execute
 [ra_horakhty][Dev][PPDS]
 -> sudo ./PPDS
 [sudo] password for ra_horakhty: 
 [-] Insufficient args
-[Usage] ./PPDS <Buffer Write Size Ex. 1048576 (1MB)> <Device Ex. /dev/sdb>
+[Usage] ./PPDS <Buffer write size in bytes Ex. 1048576 (1MB)> <Device Ex. /dev/sdb>
 
 # Example output of erasing my 8GB USB drive with a 1MB write
 
