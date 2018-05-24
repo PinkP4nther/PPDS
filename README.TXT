@@ -23,5 +23,6 @@ $ make
 [INFO] Bytes Out: 5368709120 -> Device: /dev/sdb
 [INFO] Bytes Out: 6442450944 -> Device: /dev/sdb
 [INFO] Bytes Out: 7516192768 -> Device: /dev/sdb
-[+] Finishing up. This could take a while..
-[+] Total bytes written: 8006926335
+[INFO] Finishing up. This could take a while..
+[INFO] Device overwritten: /dev/sdb
+[INFO] Total bytes written: 8006926335
