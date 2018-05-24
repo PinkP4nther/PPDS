@@ -48,7 +48,7 @@ int main(int argc, char** argv)
 	
 	} while (tempbuff == chunksize);
 
-	printf("[+] Finishing up..\n");
+	printf("[+] Finishing up. This could take a while..\n");
 	close(devFD);
 	printf("[+] Total bytes written: %ld\n",totalbytes);
 	free(bytes);
